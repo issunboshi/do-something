@@ -1,7 +1,11 @@
 @extends('layout')
 
 @section('content')
-    <h1>A city</h1>
+    <h1>{{ $city->title }}</h1>
 
-    {{ $city->title }}
+    {{ $city->places }}
+    {{-- @foreach($city->places as $place)
+        {{ $place->title }}
+    @endforeach --}}
+
 @stop()
