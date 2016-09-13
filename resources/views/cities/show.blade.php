@@ -3,9 +3,9 @@
 @section('content')
     <h1>{{ $city->title }}</h1>
 
-    {{ $city->places }}
-    {{-- @foreach($city->places as $place)
+    <h2>Available places</h2>
+    @foreach( $city->place as $place )
         {{ $place->title }}
-    @endforeach --}}
+    @endforeach
 
 @stop()

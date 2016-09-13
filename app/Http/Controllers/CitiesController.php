@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\City;
+use App\Place;
 
 class CitiesController extends Controller
 {
@@ -15,7 +16,6 @@ class CitiesController extends Controller
     }
 
     public function show(City $city) {
-
         return view('cities.show', compact('city'));
     }
 }
