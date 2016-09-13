@@ -8,7 +8,7 @@ use App\City;
 use App\Place;
 
 class CitiesController extends Controller
-{
+{    
     public function index() {
         $cities = City::all();
 

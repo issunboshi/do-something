@@ -6,9 +6,9 @@
     <ul>
     @foreach ($cities as $city)
         <li>
-            {{ $city->title }}
+            <a href="/cities/{{ $city->id }}"> {{ $city->title }} </a>
         </li>
     @endforeach
     </ul>
-    
+
 @stop()

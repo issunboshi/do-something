@@ -6,7 +6,7 @@
     <ul>
     @foreach ($places as $place)
         <li>
-            {{ $place->title }}
+            <a href="/places/{{ $place->id }}"> {{ $place->title }} </a> - <a href="/cities/{{ $place->city->id }}"> {{ $place->city->title }} </a>
         </li>
     @endforeach
     </ul>
