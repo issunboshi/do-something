@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('cities', 'CitiesController@index');
 
 Route::get('cities/{city}', 'CitiesController@show');
+
+Route::get('types/{type}', 'TypesController@show');
+
+Route::get('places/{place}', 'PlacesController@show');
