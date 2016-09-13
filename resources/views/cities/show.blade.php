@@ -13,4 +13,17 @@
     @endforeach
     </ul>
 
+    <form method="post" action="/cities/{{ $city->id }}/places">
+        <input type="text" name="title" value="">
+
+        <select class="" name="type_id">
+            @foreach( $types as $type )
+                <option value="{{ $type->id }}"> {{ $type->title }} </option>
+            @endforeach
+        </select>
+        
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <button type="submit" name="button">Add place</button>
+    </form>
+
 @stop()

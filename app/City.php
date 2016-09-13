@@ -11,4 +11,8 @@ class City extends Model
     public function place() {
         return $this->hasMany(Place::class);
     }
+
+    public function addPlace(Place $place) {
+        return $this->place()->save($place);
+    }
 }
