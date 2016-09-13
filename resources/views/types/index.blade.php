@@ -6,7 +6,7 @@
     <ul>
     @foreach ($types as $type)
         <li>
-            {{ $type->title }}
+            <a href="/types/{{ $type->id }}"> {{ $type->title }} </a>
         </li>
     @endforeach
     </ul>

@@ -15,4 +15,8 @@ class Place extends Model
     public function type() {
         return $this->belongsTo(Type::class);
     }
+
+    public function updatePlace(Array $data) {
+        return $this->update($data);
+    }
 }

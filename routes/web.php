@@ -24,3 +24,5 @@ Route::get('types/{type}', 'TypesController@show');
 
 Route::get('places', 'PlacesController@index');
 Route::get('places/{place}', 'PlacesController@show');
+Route::get('places/{place}/edit', 'PlacesController@edit');
+Route::patch('places/{place}/update', 'PlacesController@update');

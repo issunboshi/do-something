@@ -5,13 +5,18 @@
 
     <h2>Available places</h2>
 
-    <ul>
-    @foreach( $city->place as $place )
-        <li>
-            <a href="/places/{{ $place->id }}"> {{ $place->title }} </a> - <a href="/types/{{ $place->type->id }}"> {{ $place->type->title }} </a>
-        </li>
+    @foreach ($types as $type )
+        <h2> <a href="/types/{{ $type->id }}"> {{ $type->title }} </a> </h2>
+
+        <ul>
+        @foreach ($type->place as $place)
+            <li>
+                <a href="/places/{{ $place->id }}"> {{ $place->title }} </a>
+            </li>
+        @endforeach
+        </ul>
     @endforeach
-    </ul>
+
 
     <form method="post" action="/cities/{{ $city->id }}/places">
         <input type="text" name="title" value="">
@@ -21,7 +26,7 @@
                 <option value="{{ $type->id }}"> {{ $type->title }} </option>
             @endforeach
         </select>
-        
+
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <button type="submit" name="button">Add place</button>
     </form>
