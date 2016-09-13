@@ -1,14 +1,14 @@
 @extends('layout')
 
 @section('content')
-    <h1>All cities</h1>
+    <h1>All places</h1>
 
     <ul>
-    @foreach ($cities as $city)
+    @foreach ($places as $place)
         <li>
-            {{ $city->title }}
+            {{ $place->title }}
         </li>
     @endforeach
     </ul>
-    
+
 @stop()
