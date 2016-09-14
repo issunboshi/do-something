@@ -21,7 +21,7 @@ class PlacesController extends Controller
     }
 
     public function store(Request $request, City $city) {
-        $place = $city->load('place');
+        $place = new Place;
 
         $place->title = $request->title;
         $place->city_id = $city->id;
