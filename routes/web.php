@@ -2,27 +2,29 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Application Routes
 |--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['web']], function () {
+    // Homepage route
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+    // City routes
+    Route::get('cities', 'CitiesController@index');
+    Route::get('cities/{city}', 'CitiesController@show');
+    Route::post('cities/{city}/places', 'PlacesController@store');
+
+    // Type routes
+    Route::get('types', 'TypesController@index');
+    Route::get('types/{type}', 'TypesController@show');
+
+    // Place routes
+    Route::get('places', 'PlacesController@index');
+    Route::get('places/{place}', 'PlacesController@show');
+    Route::get('places/{place}/edit', 'PlacesController@edit');
+    Route::patch('places/{place}/update', 'PlacesController@update');
 });
-
-Route::get('cities', 'CitiesController@index');
-Route::get('cities/{city}', 'CitiesController@show');
-Route::post('cities/{city}/places', 'PlacesController@store');
-
-Route::get('types', 'TypesController@index');
-Route::get('types/{type}', 'TypesController@show');
-
-Route::get('places', 'PlacesController@index');
-Route::get('places/{place}', 'PlacesController@show');
-Route::get('places/{place}/edit', 'PlacesController@edit');
-Route::patch('places/{place}/update', 'PlacesController@update');

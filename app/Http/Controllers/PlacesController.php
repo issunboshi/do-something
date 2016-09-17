@@ -21,6 +21,11 @@ class PlacesController extends Controller
     }
 
     public function store(Request $request, City $city) {
+
+        $this->validate($request, [
+            'title' => 'required'
+        ]);
+
         $place = new Place;
 
         $place->title = $request->title;
