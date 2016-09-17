@@ -19,7 +19,7 @@
 
 
     <form method="post" action="/cities/{{ $city->id }}/places">
-        <input type="text" name="title" value="">
+        <input type="text" name="title" value="{{ old('title')}}">
 
         <select class="" name="type_id">
             @foreach( $types as $type )
