@@ -31,4 +31,12 @@
         <button type="submit" name="button">Add place</button>
     </form>
 
+    @if(count($errors))
+        <ul>
+            @foreach($errors->all() as $error)
+                <li> {{ $error }} </li>
+            @endforeach
+        </ul>
+    @endif
+
 @stop()
