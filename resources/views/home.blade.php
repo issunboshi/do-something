@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Page not found</h1>
+    You're logged in.
 @stop()

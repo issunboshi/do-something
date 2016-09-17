@@ -8,10 +8,10 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Auth::routes();
+
     // Homepage route
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', 'HomeController@index');
 
     // City routes
     Route::get('cities', 'CitiesController@index');
