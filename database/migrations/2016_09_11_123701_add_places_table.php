@@ -17,7 +17,6 @@ class AddPlacesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->integer('city_id')->unsigned()->index();
-            $table->integer('type_id')->unsigned()->index();
             $table->timestamps();
         });
     }
