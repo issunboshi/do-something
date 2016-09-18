@@ -12,10 +12,6 @@ class Place extends Model
         return $this->belongsTo(City::class);
     }
 
-    public function type() {
-        return $this->belongsTo(Type::class);
-    }
-
     public function updatePlace(Array $data) {
         return $this->update($data);
     }

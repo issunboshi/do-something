@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Place;
 use App\City;
-use App\Type;
 
 class PlacesController extends Controller
 {
@@ -30,7 +29,6 @@ class PlacesController extends Controller
 
         $place->title = $request->title;
         $place->city_id = $city->id;
-        $place->type_id = $request->type_id;
 
         $city->addPlace($place);
 
@@ -38,8 +36,6 @@ class PlacesController extends Controller
     }
 
     public function edit(Place $place) {
-        $types = Type::all();
-
         return view('places.edit', compact('place', 'types'));
     }
 
