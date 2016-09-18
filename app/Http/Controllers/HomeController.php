@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        flash('You\'re now signed in');
+
         return view('home');
     }
 }
