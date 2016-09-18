@@ -22,7 +22,9 @@ class CitiesTest extends TestCase
      */
     public function testCityPage()
     {
-        $this->visit('/cities')
-             ->see('All cities');
+
+        $this->visit('/cities/1')
+            ->see('King William')
+             ->see('Available Places');
     }
 }
