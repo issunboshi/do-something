@@ -5,7 +5,10 @@
     <p>
         In <a href="/cities/{{ $place->city->id }}"> {{ $place->city->title }} </a>
     </p>
-    <p>
-        <a href="/places/{{ $place->id }}/edit"> Edit this place </a>
-    </p>
+
+    @if($user && $user->isAdmin())
+        <p>
+            <a href="/places/{{ $place->id }}/edit"> Edit this place </a>
+        </p>
+    @endif
 @stop()

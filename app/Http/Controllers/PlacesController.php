@@ -20,8 +20,10 @@ class PlacesController extends Controller
         return view('places.index', compact('places'));
     }
 
-    public function show(Place $place) {
-        return view('places.show', compact('place'));
+    public function show(Request $request, Place $place) {
+        $user = $request->user();
+
+        return view('places.show', compact('place', 'user'));
     }
 
     public function store(Request $request, City $city) {
@@ -41,7 +43,6 @@ class PlacesController extends Controller
     }
 
     public function edit(Place $place) {
-
         return view('places.edit', compact('place'));
     }
 
