@@ -9,6 +9,11 @@ use App\City;
 
 class PlacesController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('admin', ['only' => ['edit']]);
+    }
+
     public function index() {
         $places = Place::all();
 
@@ -36,7 +41,8 @@ class PlacesController extends Controller
     }
 
     public function edit(Place $place) {
-        return view('places.edit', compact('place', 'types'));
+
+        return view('places.edit', compact('place'));
     }
 
     public function update(Request $request, Place $place) {

@@ -17,11 +17,12 @@ class MustBeAdmin
     {
         $user = $request->user();
 
-        if ($user && $user->email == 'cliffordw1987@gmail.com') {
+        if ($user && $user->admin == true) {
             return $next($request);
         }
 
-        abort('404', 'Not allowed');
+
+        abort('403', 'Not allowed');
 
     }
 }
