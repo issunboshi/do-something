@@ -14,11 +14,16 @@ class UsersTest extends TestCase
     public function testNonAdminUser()
     {
         $user = factory(App\User::class)->make();
+
+        $this->assertFalse($user->admin);
+
     }
 
     public function testAdminUser()
     {
         $user = factory(App\User::class, 'admin')->make();
+
+        $this->assertTrue($user->admin);
     }
 
 
