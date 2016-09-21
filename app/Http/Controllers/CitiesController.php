@@ -14,8 +14,9 @@ class CitiesController extends Controller
         return view('cities.index', compact('cities'));
     }
 
-    public function show(City $city) {
+    public function show(Request $request, City $city) {
+        $user = $request->user();
 
-        return view('cities.show', compact('city'));
+        return view('cities.show', compact('city', 'user'));
     }
 }
