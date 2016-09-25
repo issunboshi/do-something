@@ -6,6 +6,9 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class CitiesTest extends TestCase
 {
+
+    use DatabaseTransactions;
+
     /**
      *
      * @return void
@@ -22,9 +25,9 @@ class CitiesTest extends TestCase
      */
     public function testCityPage()
     {
+        $city = factory(App\City::class)->create();
 
-        $this->visit('/cities/1')
-            ->see('King William')
-             ->see('Available Places');
+        $this->visit('/cities/' . $city->id)
+             ->see($city->title);
     }
 }

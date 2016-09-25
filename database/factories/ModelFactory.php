@@ -28,3 +28,17 @@ $factory->defineAs(App\User::class, 'admin', function ($faker) use ($factory) {
 
     return array_merge($user, ['admin' => true]);
 });
+
+$factory->define(App\City::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->city
+    ];
+});
+
+$factory->define(App\Place::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->company
+    ];
+});
