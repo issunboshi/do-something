@@ -15,6 +15,7 @@ class UsersTest extends TestCase
     {
         $user = factory(App\User::class)->make();
 
+        $this->be($user);
         $this->assertFalse($user->admin);
 
     }
@@ -23,6 +24,7 @@ class UsersTest extends TestCase
     {
         $user = factory(App\User::class, 'admin')->make();
 
+        $this->be($user);
         $this->assertTrue($user->admin);
     }
 
