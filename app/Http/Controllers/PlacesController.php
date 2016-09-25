@@ -10,23 +10,27 @@ use App\City;
 class PlacesController extends Controller
 {
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('admin', ['only' => ['edit']]);
     }
 
-    public function index() {
+    public function index()
+    {
         $places = Place::all();
 
         return view('places.index', compact('places'));
     }
 
-    public function show(Request $request, Place $place) {
+    public function show(Request $request, Place $place)
+    {
         $user = $request->user();
 
         return view('places.show', compact('place', 'user'));
     }
 
-    public function store(Request $request, City $city) {
+    public function store(Request $request, City $city)
+    {
 
         $this->validate($request, [
             'title' => 'required'
@@ -42,11 +46,13 @@ class PlacesController extends Controller
         return back();
     }
 
-    public function edit(Place $place) {
+    public function edit(Place $place)
+    {
         return view('places.edit', compact('place'));
     }
 
-    public function update(Request $request, Place $place) {
+    public function update(Request $request, Place $place)
+    {
         $place->updatePlace($request->all());
 
         return back();
